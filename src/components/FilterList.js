@@ -1,8 +1,15 @@
 import React, {useEffect, useRef, useState} from "react";
 import {TextField} from '@fluentui/react/lib/TextField'
 import {DetailsList, DetailsListLayoutMode, Selection} from '@fluentui/react/lib/DetailsList'
-import { ScrollablePane } from '@fluentui/react/lib/ScrollablePane';
-import { Sticky, StickyPositionType } from '@fluentui/react/lib/Sticky';
+import {ScrollablePane} from '@fluentui/react/lib/ScrollablePane';
+import {Sticky, StickyPositionType} from '@fluentui/react/lib/Sticky';
+import {mergeStyleSets} from '@fluentui/react/lib/Styling'
+
+const styles = mergeStyleSets({
+    detailsList: {
+        overflowX: "hidden"
+    }
+})
 
 const classNames = {
     mainGrid: "ms-Grid",
@@ -83,7 +90,7 @@ export const FilterList = (prop) => {
 
     return (
         <div className={classNames.mainGrid} dir="ltr">
-            <ScrollablePane styles={{ contentContainer: {overflowX: 'hidden'}, stickyAbove: { background: 'white' } }}>
+            <ScrollablePane styles={{contentContainer: {overflowX: 'hidden'}, stickyAbove: {background: 'white'}}}>
                 <Sticky stickyPosition={StickyPositionType.Header}>
                     <div className={classNames.row}>
                         <div className={classNames.searchCol}>
@@ -94,6 +101,7 @@ export const FilterList = (prop) => {
                     </div>
                 </Sticky>
                 <DetailsList
+                    className={styles.detailsList}
                     columns={columns}
                     items={dispToEntry(displayItems)}
                     layoutMode={DetailsListLayoutMode.justified}

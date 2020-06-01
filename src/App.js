@@ -44,7 +44,7 @@ const styles = mergeStyleSets({
         paddingTop: "40px"
     },
     content: {
-        marginTop: "10px",
+        margin: "10px 0 15px",
         overflowX: "hidden",
     },
     flexboxCol: {
