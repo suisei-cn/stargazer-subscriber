@@ -111,6 +111,9 @@ function App() {
     return (
         <BrowserRouter basename={BASENAME}>
             <div className={`${styles.app} ${styles.flexboxCol}`}>
+                <ModalMsg
+                    msg={getModal(session && session.token, error)}
+                />
                 <Panel className={styles.popupPanel}
                        isOpen={isDrawerOpen} onDismiss={toggleDrawer} hasCloseButton={false}>
                     <div className={styles.popupNav}>
