@@ -91,10 +91,6 @@ const navGroups = [
                 name: "Notification",
                 key: "notification",
                 icon: "ReminderTime"
-            }, {
-                name: "Advance",
-                key: "advance",
-                icon: "Settings"
             }
         ]
     }
@@ -148,9 +144,6 @@ function App() {
                                     </Route>
                                     <Route path="/notification">
                                         <NotificationManage optState={notifState} dispatch={dispatchNotifState}/>
-                                    </Route>
-                                    <Route path="/advance">
-                                        Advance
                                     </Route>
                                     <Route path="/auth">
                                         <AuthRoute setToken={saveJWT} redirect="/subscription"/>
