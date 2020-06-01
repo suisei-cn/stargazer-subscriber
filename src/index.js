@@ -8,9 +8,7 @@ import {initializeIcons} from '@uifabric/icons';
 initializeIcons();
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
+    <App/>,
     document.getElementById('root')
 );
 

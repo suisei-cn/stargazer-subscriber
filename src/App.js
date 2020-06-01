@@ -28,7 +28,7 @@ const styles = mergeStyleSets({
         overflowY: "hidden",
         position: "absolute",
         height: "100vh",
-        width: "100%"
+        width: "100%",
     },
     cmdbar: {
         borderBottom: "1px solid #ccc"
@@ -45,8 +45,16 @@ const styles = mergeStyleSets({
     },
     content: {
         marginTop: "10px",
-        height: "calc(100% - 120px)",
         overflowX: "hidden",
+    },
+    flexboxCol: {
+        display: "flex",
+        flexDirection: "column",
+    },
+    flex1: {
+        flex: 1,
+        position: "relative",
+        overflow: "hidden",
     },
     fullHeight: {
         height: "100%"
@@ -66,10 +74,10 @@ const styles = mergeStyleSets({
 })
 
 const classNames = {
-    mainGrid: `ms-Grid ${styles.fullHeight}`,
+    mainGrid: `ms-Grid ${styles.flex1}`,
     mainRow: `ms-Grid-row ${styles.fullHeight}`,
     navCol: `ms-Grid-col ms-md2 ms-hiddenSm ${styles.fullHeight}`,
-    contentCol: `ms-Grid-col ms-sm12 ms-md10 ${styles.fullHeight}`
+    contentCol: `ms-Grid-col ms-sm12 ms-md10 ${styles.fullHeight} ${styles.flexboxCol}`
 }
 
 const navGroups = [
@@ -102,10 +110,7 @@ function App() {
 
     return (
         <BrowserRouter basename={BASENAME}>
-            <div className={styles.app}>
-                <ModalMsg
-                    msg={getModal(session && session.token, error)}
-                />
+            <div className={`${styles.app} ${styles.flexboxCol}`}>
                 <Panel className={styles.popupPanel}
                        isOpen={isDrawerOpen} onDismiss={toggleDrawer} hasCloseButton={false}>
                     <div className={styles.popupNav}>
@@ -132,7 +137,7 @@ function App() {
                         </div>
                         <div className={classNames.contentCol}>
                             <MsgBar className={styles.msgBar} notifState={notifState}/>
-                            <div className={styles.content}>
+                            <div className={`${styles.content} ${styles.flex1}`}>
                                 <Switch>
                                     <Route path="/subscription">
                                         <FilterList items={subState.items} selected={subState.selected}
