@@ -1,6 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
 import {TextField} from '@fluentui/react/lib/TextField'
 import {DetailsList, DetailsListLayoutMode, Selection} from '@fluentui/react/lib/DetailsList'
+import { ScrollablePane } from '@fluentui/react/lib/ScrollablePane';
+import { Sticky, StickyPositionType } from '@fluentui/react/lib/Sticky';
 
 const classNames = {
     mainGrid: "ms-Grid",
@@ -68,31 +70,43 @@ export const FilterList = (prop) => {
         refSuppress.current = false;
     }, [displayItems, prop.selected]);
 
+    function onRenderDetailsHeader(props, defaultRender) {
+        if (!props) {
+            return null;
+        }
+        return (
+            <Sticky stickyPosition={StickyPositionType.Header} isScrollSynced={true}>
+                {defaultRender(props)}
+            </Sticky>
+        );
+    };
+
     return (
         <div className={classNames.mainGrid} dir="ltr">
-            <div className={classNames.row}>
-                <div className={classNames.searchCol}>
-                    <TextField placeholder="Search all entries" onChange={(e, text) => {
-                        setFilter(text)
-                    }} value={filter}/>
-                </div>
-            </div>
-            <div className={classNames.row}>
-                <div className={classNames.listCol}>
-                    <DetailsList
-                        columns={columns}
-                        items={dispToEntry(displayItems)}
-                        layoutMode={DetailsListLayoutMode.justified}
-                        setKey="set"
-                        selection={selection}
-                        selectionPreservedOnEmptyClick={true}
-                        ariaLabelForSelectionColumn="Toggle selection"
-                        ariaLabelForSelectAllCheckbox="Toggle selection for all items"
-                        checkButtonAriaLabel="Row checkbox"
-                        getKey={getKey}
-                    />
-                </div>
-            </div>
+            <ScrollablePane styles={{ contentContainer: {overflowX: 'hidden'}, stickyAbove: { background: 'white' } }}>
+                <Sticky stickyPosition={StickyPositionType.Header}>
+                    <div className={classNames.row}>
+                        <div className={classNames.searchCol}>
+                            <TextField placeholder="Search all entries" onChange={(e, text) => {
+                                setFilter(text)
+                            }} value={filter}/>
+                        </div>
+                    </div>
+                </Sticky>
+                <DetailsList
+                    columns={columns}
+                    items={dispToEntry(displayItems)}
+                    layoutMode={DetailsListLayoutMode.justified}
+                    setKey="set"
+                    selection={selection}
+                    selectionPreservedOnEmptyClick={true}
+                    ariaLabelForSelectionColumn="Toggle selection"
+                    ariaLabelForSelectAllCheckbox="Toggle selection for all items"
+                    onRenderDetailsHeader={onRenderDetailsHeader}
+                    checkButtonAriaLabel="Row checkbox"
+                    getKey={getKey}
+                />
+            </ScrollablePane>
         </div>
     )
 }
