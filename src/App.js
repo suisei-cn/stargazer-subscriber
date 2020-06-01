@@ -54,7 +54,7 @@ const styles = mergeStyleSets({
     flex1: {
         flex: 1,
         position: "relative",
-        overflow: "hidden",
+        overflow: "auto",
     },
     fullHeight: {
         height: "100%"
