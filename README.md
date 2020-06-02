@@ -1,6 +1,6 @@
 # Stargazer Subscriber
 
-Stargazer Subscriber is the universal frontend of stargazer bots.
+Stargazer Subscriber is the universal webui for stargazer bots.
 
 It provides a unified setting page for all stargazer bots, allowing users of different instant messaging apps to
 subscribe to vtubers easily.
@@ -15,11 +15,12 @@ subscribe to vtubers easily.
 
 [PyStargazer](https://github.com/suisei-cn/pystargazer) - PyStargazer is a flexible vtuber tracker. It's now capable of monitoring Youtube live status, new tweets, and bilibili dynamic.
 
-Stargazer Subscriber Backend - The python backend of stargazer subscriber.
+`Stargazer Subscriber Backend` - The python backend of stargazer subscriber.
 
-StargazerTelegram - [@pystargazer_bot](https://t.me/pystargazer_bot)
+[StargazerTelegram](https://github.com/suisei-cn/stargazer-telegram) ([@pystargazer_bot](https://t.me/pystargazer_bot)) - the telegram frontend for [PyStargazer](https://github.com/suisei-cn/stargazer-subscriber)
+and Stargazer Subscriber Backend. 
 
-StargazerQQ - UserID: 2733773638
+`StargazerQQ` - UserID: 2733773638
 
 All projects listed above will be open-sourced once ready.
 
