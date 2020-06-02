@@ -15,14 +15,13 @@ subscribe to vtubers easily.
 
 [PyStargazer](https://github.com/suisei-cn/pystargazer) - PyStargazer is a flexible vtuber tracker. It's now capable of monitoring Youtube live status, new tweets, and bilibili dynamic.
 
-`Stargazer Subscriber Backend` - The python backend of stargazer subscriber.
+[Stargazer Subscriber Backend](https://github.com/suisei-cn/stargazer-subscriber-backend) - The python backend of stargazer subscriber.
 
-[StargazerTelegram](https://github.com/suisei-cn/stargazer-telegram) ([@pystargazer_bot](https://t.me/pystargazer_bot)) - the telegram frontend for [PyStargazer](https://github.com/suisei-cn/stargazer-subscriber)
+[Stargazer Telegram](https://github.com/suisei-cn/stargazer-telegram) ([@pystargazer_bot](https://t.me/pystargazer_bot)) - The telegram frontend for [PyStargazer](https://github.com/suisei-cn/pystargazer)
 and Stargazer Subscriber Backend. 
 
-`StargazerQQ` - UserID: 2733773638
-
-All projects listed above will be open-sourced once ready.
+[Stargazer QQ](https://github.com/suisei-cn/stargazer-qq) (2733773638) - The QQ frontend for [PyStargazer](https://github.com/suisei-cn/pystargazer)
+and Stargazer Subscriber Backend. 
 
 ## Deploy
 
