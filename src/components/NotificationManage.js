@@ -24,10 +24,11 @@ const optGroups = [
     {
         "title": "Bilibili",
         "children": [
+            {key: "bili_live", label: "Notify me when a vtuber goes live on Bilibili."},
             {key: "bili_plain_dyn", label: "Notify me when a vtuber sends a dynamic"},
             {key: "bili_rt_dyn", label: "Notify me when a vtuber forwards a dynamic"},
             {key: "bili_img_dyn", label: "Notify me when a vtuber sends an image (useful for tracking translation)"},
-            {key: "bili_video", label: "Notify me when a vtuber uploads a new video"},
+            {key: "bili_video", label: "Notify me when a vtuber uploads a new video"}
         ]
     }, {
         "title": "Twitter",
@@ -38,7 +39,7 @@ const optGroups = [
     }, {
         "title": "Youtube",
         "children": [
-            {key: "ytb_live", label: "Notify me when a vtuber goes live"},
+            {key: "ytb_live", label: "Notify me when a vtuber goes live on Youtube"},
             {key: "ytb_sched", label: "Notify me when a broadcast is scheduled"},
             {key: "ytb_reminder", label: "Remind 30 minutes earlier before the live"},
             {key: "ytb_video", label: "Notify me when a vtuber posts a new video"}
